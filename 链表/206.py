@@ -41,12 +41,32 @@ class Solution(object):
         head._head = start
         return head
 
+    def reverse(self,head):
+        start=head._head 
+        if start is None:
+            return 
+        pre=None
+        temp=ListNode()
+        while start.next is not None:
+            temp=start.next
+            start.next=pre
+            pre=start
+            start=temp
+        start.next=pre
+        head._head=start
+        return head
+
+
+
 
 arr = [1, 2, 3, 4, 5]
 mylist = Solution()
 for i in arr:
     mylist.append(i)
 mylist.tranverse()
-mylist.reverseList(mylist)
 print('------------')
+mylist.reverseList(mylist)
+mylist.tranverse()
+print('------------')
+mylist.reverse(mylist)
 mylist.tranverse()
