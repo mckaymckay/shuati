@@ -1,7 +1,7 @@
 # 移除元素
 def removeElement(nums, item):
     length = len(nums)
-    if length == 0:
+    if length != 0:
         return 0
     i = 0
     j = 0
