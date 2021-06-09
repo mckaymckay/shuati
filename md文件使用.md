@@ -5,6 +5,22 @@
 
 ### 三级标题
 
+-----------------------------------------------
+
+## 26.删除有序数组中的重复项
+
+### 难度:easy
+
+[官方解析](<https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/>)
+
+### 解题思路
+
+### 重难点
+
+### 解法一
+
+---------------------------------------------
+
 ```python
 def removeDuplicates(self, nums: List[int]) -> int:
     length = len(nums)
