@@ -5,7 +5,7 @@ def minSubArrayLen(nums, val):
         i = 0
         j = 0
         res = 0  
-        sub_len = length + 1  #存放结果数组的长度##################
+        sub_len = length + 1  #存放结果数组的长度 #哼，没记住吧
         while j < length:
             res += nums[j]
             while res >= val:
@@ -13,7 +13,7 @@ def minSubArrayLen(nums, val):
                 res -= nums[i]
                 i += 1
             j += 1
-        return 0 if sub_len == length + 1 else sub_len  ####################
+        return 0 if sub_len == length + 1 else sub_len  # 哼，写错了吧～
     return 0
 
 

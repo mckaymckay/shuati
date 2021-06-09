@@ -9,8 +9,6 @@ def removeZeros(nums):
         while j < length:
             if nums[j]:
                 nums[i] = nums[j]
-                # if i!=j:
-                #     nums[j]=0
                 i += 1
             j += 1
         # 第二次遍历把末尾的元素都赋值为0
@@ -30,7 +28,7 @@ def removeZeros1(nums):
         j = 0
         while j < length:
             if nums[j] != 0:
-                nums[i], nums[j] = nums[j], nums[i]
+                nums[i], nums[j] = nums[j], nums[i] #####
                 i += 1
             j += 1
         return nums
