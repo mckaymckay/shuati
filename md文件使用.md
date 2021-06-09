@@ -1,9 +1,9 @@
 
-# 1
+# 一级标题
 
-## 2
+## 二级标题
 
-### 3
+### 三级标题
 
 ```python
 def removeDuplicates(self, nums: List[int]) -> int:
@@ -18,6 +18,11 @@ def removeDuplicates(self, nums: List[int]) -> int:
     return i + 1
 ```
 
+```python
+def init():
+    pass
+```
+
 *文本*
 __粗体文本__
 ***粗斜体文本***
@@ -25,10 +30,5 @@ __粗体文本__
 > zuiwaiceng
 >>yiceng
 >>>erceng
-
-```python
-def init():
-    pass
-```
 
 代码地址[26](https://github.com/mckaymckay/shuati/blob/main/26.md)
