@@ -9,26 +9,37 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         length = len(nums)
-        if length != 0:
-            # arr=[]
-            # for i in range(length):
-            #     if target==nums[i]:
-            #         arr.append(i)
-            # len_arr=len(arr)
-            # return [min(arr),max(arr)] if len_arr!=0 else [-1,-1]
-            low = 0, high = length - 1
-            while low <= high:
-                mid = (low + high) // 2
-                arr=[]
-                if nums[mid] < target:
-                    low = mid + 1
-                elif nums[mid] > target:
-                    high = mid - 1
-                else:
-                    arr.append(mid)
-                    
-        else:
+        if target not in nums:
             return [-1, -1]
+        firstPos = self.findfirstPos(nums, target)
+        lastPos = self.findlastPos(nums, target)
+        return [firstPos, lastPos]
+
+    #找到最初target出现的位置
+    def findfirstPos(self, nums, target):
+        length = len(nums)
+        left, right = 0, length - 1
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                # 小于一定不是解
+                left = mid + 1 # 
+            else:
+                right = mid
+        return left
+
+    # 找到最后一个target出现的位置
+    def findlastPos(self, nums, target):
+        length = len(nums)
+        left, right = 0, length - 1
+        while left < right:
+            mid = (left + right + 1) // 2  # 这里是上取整
+            if nums[mid] > target:
+                # 大于一定不是解
+                right = mid - 1
+            else:
+                left = mid
+        return left
 
 
 # @lc code=end
