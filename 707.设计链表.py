@@ -4,17 +4,20 @@
 # [707] 设计链表
 #
 
-
 # @lc code=start
+
+
+# 定义结点
 class ListNode(object):
     def __init__(self, value=0):
         self.value = value
         self.next = None
 
 
+# 定义链表
 class MyLinkedList:
     def __init__(self, value=0):
-        self.head = None
+        self.head = ListNode(0)
         self.size = 0
         """
         Initialize your data structure here.
@@ -32,8 +35,8 @@ class MyLinkedList:
         if index < 0 or index >= self.size:
             return -1
         start = self.head
-        for _ in range(index):
-            start=start.next
+        for _ in range(index + 1):
+            start = start.next
         return start.value
         """
         Get the value of the index-th node in the linked list. If the index is invalid, return -1.
@@ -54,18 +57,17 @@ class MyLinkedList:
     def addAtIndex(self, index: int, val: int) -> None:
         if index > self.size:
             return
+
+        if index <= 0:
+            index = 0
+
+        self.size += 1
         newNode = ListNode(val)
         start = self.head
-        if index <= 0:
-            newNode.next = self.head
-            self.head = newNode
-
-        else:
-            for _ in range(index - 1):
-                start = start.next
-            newNode.next = start.next
-            start.next = newNode
-        self.size += 1
+        for _ in range(index):
+            start = start.next
+        newNode.next = start.next
+        start.next = newNode
         """
         Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
         """
@@ -73,15 +75,12 @@ class MyLinkedList:
     def deleteAtIndex(self, index: int) -> None:
         if index < 0 or index >= self.size:
             return
-        start = self.head
-        if index == 0:
-            self.head = self.head.next
-        else:
-            start = self.head
-            for _ in range(index - 1):
-                start = start.next
-            start.next = start.next.next
+
         self.size -= 1
+        start = self.head
+        for _ in range(index):
+            start = start.next
+        start.next = start.next.next
         """
         Delete the index-th node in the linked list, if the index is valid.
         """
