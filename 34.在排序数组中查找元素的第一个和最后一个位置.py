@@ -11,35 +11,27 @@ class Solution:
         length = len(nums)
         if target not in nums:
             return [-1, -1]
-        firstPos = self.findfirstPos(nums, target)
-        lastPos = self.findlastPos(nums, target)
+        # firstPos = self.findfirstPos(nums, target)
+        firstPos = self.findTarget(nums, target)
+        lastPos = self.findTarget(nums, target + 1) - 1
+        # lastPos = self.findlastPos(nums, target)
         return [firstPos, lastPos]
 
-    #找到最初target出现的位置
-    def findfirstPos(self, nums, target):
-        length = len(nums)
-        left, right = 0, length - 1
-        while left < right:
-            mid = (left + right) // 2
-            if nums[mid] < target:
-                # 小于一定不是解
-                left = mid + 1 # 
-            else:
-                right = mid
-        return left
 
-    # 找到最后一个target出现的位置
-    def findlastPos(self, nums, target):
+    # 思路:寻找第一个等于target的位置，寻找第一个target+1的位置，再往前移动一个位置，这样一个二分查找函数就能解决。
+    def findTarget(self, nums, target):
         length = len(nums)
-        left, right = 0, length - 1
-        while left < right:
-            mid = (left + right + 1) // 2  # 这里是上取整
-            if nums[mid] > target:
-                # 大于一定不是解
-                right = mid - 1
-            else:
-                left = mid
-        return left
+        if length != 0:
+            left, right = 0, length
+            while left < right:
+                mid = (left + right) // 2
+                if nums[mid] < target:
+                    left = mid + 1
+                else:
+                    right = mid
+            return left
+        else:
+            return [-1, -1]
 
 
 # @lc code=end
