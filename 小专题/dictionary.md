@@ -127,7 +127,7 @@ girl mckay
 boy bear
 ```
 
-* 2)dict的keys()方法 : 可以得到dict的所有**key**值
+* 2) dict的keys()方法 : 可以得到dict的所有**key**值
 
 ```python
 for i in dict1.keys():
@@ -137,7 +137,7 @@ girl
 boy
 ```
 
-* 3)dic的values()方法：可以得到dict的所有**value**值
+* 3) dic的values()方法：可以得到dict的所有**value**值
 
 ```python
 for i in dict1.values():
@@ -157,7 +157,7 @@ for i in dict1.items():
 ('boy', 'bear')
 ```
 
-# 如果把每个元组的元素都分别取出来，就能输出key和value
+* 如果把每个元组的元素都分别取出来，就能输出key和value
 
 ```python
 print(i[0]+':'+i[1])
