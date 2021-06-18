@@ -8,9 +8,10 @@
 # @lc code=start
 class Solution:
     def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
-        C=s1.split()+s2.split()
-        count={}
-        count
-
+        C = s1.split() + s2.split()
+        count = {}
+        for i in C:
+            count[i] = count.get(i, 0) + 1
+        return [ i for i in count.keys() if count[i]==1]
 
 # @lc code=end
