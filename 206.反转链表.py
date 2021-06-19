@@ -16,10 +16,16 @@ class Solution:
         if head is None or head.next is None:
             return head
 
-        p = self.reverseList(head.next)
-        head.next.next = head
-        head.next = None
-        
+        pre=None
+        curr=head
+        nextnode=ListNode()
+        while curr:
+            nextnode=curr.next
+            curr.next=pre
+            pre=curr
+            curr=nextnode
+        return pre
+
         return p
 
 
