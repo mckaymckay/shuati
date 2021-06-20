@@ -17,29 +17,18 @@ from typing import *
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if l1 and l2:
-            pre = ListNode()
-            prehead=pre
-            curr1 = l1
-            curr2 = l2
-            while curr1 and curr2:
-                if curr1.val > curr2.val:
-                    prehead.next = curr2
-                    curr2=curr2.next
-                else:
-                    prehead.next=curr1
-                    curr1=curr1.next
-                prehead=prehead.next
-
-            # if not curr1:
-            #     prehead.next=curr2
-            # else:
-            #     prehead.next=curr1
-            prehead.next=curr1 if curr2==None else curr2
-            return pre.next
-
-        else:
-            return l2 if l1 is None else l1
+        pre = ListNode()
+        prehead=pre
+        while l1 and l2:
+            if l1.val>l2.val:
+                prehead.next=l2
+                l2=l2.next
+            else:
+                prehead.next=l1
+                l1=l1.next
+            prehead=prehead.next
+        prehead.next=l1 if l2==None else l2
+        return pre.next
 
 
 # @lc code=end
