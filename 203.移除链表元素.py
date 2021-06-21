@@ -13,12 +13,20 @@
 #         self.next = next
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-        if head is None:
-            return None
-        if head.val==val:
-            return self.removeElements(head.next,val)
-        head.next=self.removeElements(head.next,val)
-        return head
+        while head and head.val==val:
+            head=head.next
+        start=head
+        if head:
+            while start.next:
+                if start.next.val==val:
+                    start.next=start.next.next
+                else:
+                    start=start.next
+            return head
+        else:
+            return 
+
+        
 
 
 # @lc code=end
