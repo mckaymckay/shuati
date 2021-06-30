@@ -119,4 +119,9 @@ count={}
 nums=[1,2,3]
 for i in nums:
     count[i]=count.get(i,0)+1
-print(count.get(8,0))
+print(count)
+nums1=[1,2,2,4]
+for j in nums1:
+    count[j]=count.get(j,0)-1
+print(count)
+
