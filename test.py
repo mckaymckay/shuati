@@ -71,11 +71,13 @@ a, b = 0, 0
 # 所有数字的异或结果
 for i in nums:
     res ^= i
-
+    print(res)
 # 找到res第一个不为0的位置
-h = 1
-while(res & h == 0):
-    h << 1
+# h = 1
+# while(res & h == 0):
+#     h << 1
+h=res&-res
+print(h)
 
 for j in nums:
     if j & h == 0:
@@ -84,5 +86,37 @@ for j in nums:
         b ^= j
 print([a, b])
 
+print('----------------------------------')
+s='anagram'
+count2={}
+for i in s:
+    count2[i]=count2.get(i,0)+1
+print(count2)
+t='nagaram'
+count1={}
+for j in t:
+    count2[j]=count2.get(j)-1
+print(count2)
+print(set(s))
+record=[{0} for _ in range(26)]
+record[1]=1
+print(record)
 
+print('----------------------------------')
+nums=[1,2,3,4,3,2,1,4,5,6]
+res=set(nums)
+print(res)
 
+print('----------------------------------')
+test=list()
+list1=[1,2,3]
+list2=[4,5,6]
+list1.extend(list2)
+print(list1)
+
+print('----------------------------------')
+count={}
+nums=[1,2,3]
+for i in nums:
+    count[i]=count.get(i,0)+1
+print(count.get(8,0))

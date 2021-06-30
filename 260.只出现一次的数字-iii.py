@@ -15,15 +15,16 @@ class Solution:
             res ^= i
 
         # 找到res第一个不为0的位置
-        h = 1
-        while (res & h == 0):
-            h << 1
+        # h = 1
+        # while (res & h == 0):
+        #     h << 1
+        h = res & -res
 
         # 按照i进行分组
         for j in nums:
             if j & h == 0:
                 a ^= j
-        return [a, a^res]
+        return [a, a ^ res]
 
 
 # @lc code=end
