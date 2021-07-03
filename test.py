@@ -125,3 +125,37 @@ for j in nums1:
     count[j]=count.get(j,0)-1
 print(count)
 
+print('----------------------------------')
+nums=[1,2,2,2,3,4,5]
+print(list(set(nums)))
+
+print('----------------------------------')
+div=divmod(19,10)
+res=0
+for i in div:
+    print(i*i)
+    res+=i*i
+
+print(res)
+a, b=divmod(19,10)
+print(a, b)
+
+print('----------------------------------')
+
+
+def get_next(n):
+    
+    if n>0:
+        res=0
+        a,b=divmod(n,10)
+        print(a,b)
+        res+=b**2
+    return res
+print(get_next(19))
+print('----------------------------------')
+
+res=str(19)
+a=0
+for i in res:
+    a+=int(i)**2
+print(a)

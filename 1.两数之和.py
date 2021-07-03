@@ -4,18 +4,18 @@
 # [1] 两数之和
 #
 
+
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        length=len(nums)
-        if length:
-            for i in range(length-1):
-                for j in range(i+1,length):
-                    if nums[i]+nums[j]==target:
-                        return [i,j]
-                    
-                
-        else:
-            return []
-# @lc code=end
+        count = {}
+        for i, num in enumerate(nums):
+            count[num] = i
+        for i, num in enumerate(nums):
+            j = count.get(target - num)
+            if j and i != j:
+                return [i, j]
+        return []
 
+
+# @lc code=end
