@@ -159,3 +159,34 @@ a=0
 for i in res:
     a+=int(i)**2
 print(a)
+
+
+
+print('----------------------------------')
+randsom='a'
+magezine='b'
+count={}
+for i in magezine:
+    count[i]=count.get(i,0)+1
+
+print(count)
+for j in randsom:
+    count[j]=count.get(j,0)-1
+    if count.get(j)<0:
+        print(11)
+print(count)
+from  collections import Counter
+h=Counter(magezine)
+print(h[9])
+dict1=Counter()
+nums=[1,2,3]
+dict2={}
+print('count_dict:',dict1[2])
+print('hash_dict:',dict2.get(2))
+
+print('----------------------------------')
+nums=[1,2,2]
+count={}
+for i,num in enumerate(nums):
+    count[num]=i
+print(count)

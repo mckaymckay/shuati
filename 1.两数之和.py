@@ -8,14 +8,12 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        count = {}
-        for i, num in enumerate(nums):
-            count[num] = i
-        for i, num in enumerate(nums):
-            j = count.get(target - num)
-            if j and i != j:
-                return [i, j]
+        for i in range(len(nums)-1):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j]==target:
+                    return [i,j]
         return []
+        
 
 
 # @lc code=end
