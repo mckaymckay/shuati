@@ -10,12 +10,14 @@ class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         if len(ransomNote) > len(magazine):
             return False
-        res = collections.Counter(magazine)
-        for i in ransomNote:
-            res[i] -= 1
-            if res[i] < 0:
+        count = {}
+        for i in magazine:
+            count[i] = count.get(i, 0) + 1
+        for j in ransomNote:
+            count[j] = count.get(j, 0) - 1  # 这一步很重要
+            if count[j] < 0:
                 return False
-        return True
+        return True  # return的位置
 
 
 # @lc code=end

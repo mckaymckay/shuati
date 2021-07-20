@@ -3,7 +3,7 @@
 # nums=list.copy(arr)
 # for i in range(1,length+1):
 #     if i in arr:
-#         arr.remove(i) 
+#         arr.remove(i)
 #     else:
 #         notfound=i
 # print((arr[0],notfound))
@@ -65,7 +65,7 @@
 # print((3*set_sum-res_sum)//2)
 
 print('----------------------------------')
-nums=[2,2,3,4,3,5,6,6,7,7]
+nums = [2, 2, 3, 4, 3, 5, 6, 6, 7, 7]
 res = 0
 a, b = 0, 0
 # 所有数字的异或结果
@@ -76,7 +76,7 @@ for i in nums:
 # h = 1
 # while(res & h == 0):
 #     h << 1
-h=res&-res
+h = res & -res
 print(h)
 
 for j in nums:
@@ -87,106 +87,154 @@ for j in nums:
 print([a, b])
 
 print('----------------------------------')
-s='anagram'
-count2={}
+s = 'anagram'
+count2 = {}
 for i in s:
-    count2[i]=count2.get(i,0)+1
+    count2[i] = count2.get(i, 0) + 1
 print(count2)
-t='nagaram'
-count1={}
+t = 'nagaram'
+count1 = {}
 for j in t:
-    count2[j]=count2.get(j)-1
+    count2[j] = count2.get(j) - 1
 print(count2)
 print(set(s))
-record=[{0} for _ in range(26)]
-record[1]=1
+record = [{0} for _ in range(26)]
+record[1] = 1
 print(record)
 
 print('----------------------------------')
-nums=[1,2,3,4,3,2,1,4,5,6]
-res=set(nums)
+nums = [1, 2, 3, 4, 3, 2, 1, 4, 5, 6]
+res = set(nums)
 print(res)
 
 print('----------------------------------')
-test=list()
-list1=[1,2,3]
-list2=[4,5,6]
+test = list()
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
 list1.extend(list2)
 print(list1)
 
 print('----------------------------------')
-count={}
-nums=[1,2,3]
+count = {}
+nums = [1, 2, 3]
 for i in nums:
-    count[i]=count.get(i,0)+1
+    count[i] = count.get(i, 0) + 1
 print(count)
-nums1=[1,2,2,4]
+nums1 = [1, 2, 2, 4]
 for j in nums1:
-    count[j]=count.get(j,0)-1
+    count[j] = count.get(j, 0) - 1
 print(count)
 
 print('----------------------------------')
-nums=[1,2,2,2,3,4,5]
+nums = [1, 2, 2, 2, 3, 4, 5]
 print(list(set(nums)))
 
 print('----------------------------------')
-div=divmod(19,10)
-res=0
+div = divmod(19, 10)
+res = 0
 for i in div:
-    print(i*i)
-    res+=i*i
+    print(i * i)
+    res += i * i
 
 print(res)
-a, b=divmod(19,10)
+a, b = divmod(19, 10)
 print(a, b)
 
 print('----------------------------------')
 
 
 def get_next(n):
-    
-    if n>0:
-        res=0
-        a,b=divmod(n,10)
-        print(a,b)
-        res+=b**2
+
+    if n > 0:
+        res = 0
+        a, b = divmod(n, 10)
+        print(a, b)
+        res += b**2
     return res
+
+
 print(get_next(19))
 print('----------------------------------')
 
-res=str(19)
-a=0
+res = str(19)
+a = 0
 for i in res:
-    a+=int(i)**2
+    a += int(i)**2
 print(a)
 
-
-
 print('----------------------------------')
-randsom='a'
-magezine='b'
-count={}
+randsom = 'a'
+magezine = 'b'
+count = {}
 for i in magezine:
-    count[i]=count.get(i,0)+1
+    count[i] = count.get(i, 0) + 1
 
 print(count)
 for j in randsom:
-    count[j]=count.get(j,0)-1
-    if count.get(j)<0:
+    count[j] = count.get(j, 0) - 1
+    if count.get(j) < 0:
         print(11)
 print(count)
-from  collections import Counter
-h=Counter(magezine)
+from collections import Counter
+h = Counter(magezine)
 print(h[9])
-dict1=Counter()
-nums=[1,2,3]
-dict2={}
-print('count_dict:',dict1[2])
-print('hash_dict:',dict2.get(2))
+dict1 = Counter()
+nums = [1, 2, 3]
+dict2 = {}
+print('count_dict:', dict1[2])
+print('hash_dict:', dict2.get(2))
 
 print('----------------------------------')
-nums=[1,2,2]
-count={}
-for i,num in enumerate(nums):
-    count[num]=i
+nums = [1, 2, 2]
+count = {}
+for i, num in enumerate(nums):
+    count[num] = i
 print(count)
+
+print('*' * 100)
+nums = "ab"
+nums1 = "aa"
+count = {}
+for i in nums:
+    count[i] = count.get(i, 0) + 1
+for j in nums1:
+    count[j] = count.get(j, 0) - 1
+    print(count[j])
+print(count.get(9))
+
+from collections import Counter
+res = Counter(nums)
+print(res[9])
+
+print('----------------------------------')
+nums = [-1, 0, 1, 2, -1, -4]
+for i in range(5):
+    for j in range(i + 1, 5):
+        if 0 - nums[i] - nums[j] in nums[j + 1:]:
+            print(11)
+
+print('----------------------------------')
+arr = ["h", "e", "l", "l", "o"]
+arr.reverse()
+print(arr)
+
+left, right = 0, len(arr)-1
+while left <right:
+    print(left)
+    arr[left],arr[right]=arr[right],arr[left]
+    left += 1
+    right -= 1
+print(arr)
+
+print('----------------------------------')
+nums = [3,5,2,3]
+nums.sort()
+res=[]
+length=len(nums)
+i,j=0,length-1
+while i<j:
+    res.append(nums[i]+nums[j])
+    i+=1
+    j-=1
+rr=max(res)
+print(rr)
