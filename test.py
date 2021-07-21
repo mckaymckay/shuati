@@ -238,3 +238,13 @@ while i<j:
     j-=1
 rr=max(res)
 print(rr)
+
+
+
+
+print('----------------------------------')
+s = "the sky is blue"
+print(list(s))
+
+
+
