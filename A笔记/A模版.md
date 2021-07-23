@@ -1,6 +1,6 @@
-## 26.删除有序数组中的重复项
+## 26
 
-[官方解析](<https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/>)
+[官方解析](<>)
 
 ### 1.难度:easy
 

@@ -7,15 +7,15 @@
 # @lc code=start
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        length=len(nums)
-        if length!=0:
-            low,high=0,length-1
-            while low<=high:
-                mid=(low+high)//2
-                if nums[mid]>target:
-                    high=mid-1
-                elif nums[mid]<target:
-                    low=mid+1
+        length = len(nums)
+        if length != 0:
+            low, high = 0, length-1
+            while low <= high:
+                mid = (low+high)//2
+                if nums[mid] > target:
+                    high = mid-1
+                elif nums[mid] < target:
+                    low = mid+1
                 else:
                     return mid
             return low
@@ -28,4 +28,3 @@ class Solution:
             #         if nums[j]>=target:
             #             return j
 # @lc code=end
-
